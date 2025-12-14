@@ -22,3 +22,26 @@ fullName = 12;
 
 let isCool = false;
 isCool = "true";
+
+let userCount = 120;
+userCount = "ten";
+
+// any type
+let age: any = 30;
+age = "one";
+age = "50";
+age.toUpperCase();
+
+// prevent implicit any type
+const users = ["praveen", "arun", "kumar", "anvesh"];
+// How to prevent any type ?
+// By adding type annotation
+let getUser: string;
+
+for (let user of users) {
+  if (user === "praveen") {
+    getUser = "praveen";
+  }
+}
+getUser = 45;
+getUser = true;
