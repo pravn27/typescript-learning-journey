@@ -44,3 +44,59 @@ const book_product: Product = {
 };
 
 console.log(book_product.applyDiscount(0.6));
+
+// Reopening interfaces, adding new properties
+interface Car {
+  name: string;
+  year: number;
+}
+
+interface Car {
+  type: string;
+  fuel: string;
+}
+
+const myCar: Car = {
+  name: "VW Amio",
+  year: 2016,
+  type: "LMV",
+  fuel: "Diesel",
+};
+
+// Extending interfaces
+interface SpecialCar extends Car {
+  autoMode: boolean;
+  crushControl: "Yes" | "No";
+}
+
+const newCar: SpecialCar = {
+  name: "VW Amio",
+  year: 2016,
+  type: "LMV",
+  fuel: "Diesel",
+  autoMode: true,
+  crushControl: "Yes",
+};
+
+//extending multiple interfaces
+interface Person {
+  name: string;
+}
+
+interface Employee {
+  readonly id: number;
+  email: string;
+}
+
+interface Engineer extends Person, Employee {
+  level: string;
+  skills: string[];
+}
+
+const new_emp_1: Engineer = {
+  name: "Praveen",
+  id: 123,
+  email: "test@gmail.com",
+  level: "SSE",
+  skills: ["js", "reactjs", "python"],
+};
